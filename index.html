@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Profil Saya</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <h1>Profil Saya</h1>
+            <button id="btn-tema" type="button">Mode Gelap</button>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <div class="hero-text">
+                <p class="eyebrow">Tentang Saya</p>
+                <h2>Halo, saya Valentino</h2>
+                <p>
+                    Saya adalah mahasiswa Informatika yang sedang belajar
+                    pemrograman dan pengembangan website. Saya ingin terus
+                    menambah pengetahuan dan mengembangkan kemampuan saya
+                    di bidang teknologi.
+                </p>
+            </div>
+            <div class="foto-container">
+                <img src="Palenn.jpeg" alt="Foto profil saya" class="foto-profil">
+            </div>
+        </section>
+
+        <section class="card">
+            <h2 class="section-heading">Data Diri</h2>
+            <div class="data-grid">
+                <div class="data-item">
+                    <h3>Nama</h3>
+                    <p>Valentino Dian</p>
+                </div>
+                <div class="data-item">
+                    <h3>Program Studi</h3>
+                    <p>Informatika</p>
+                </div>
+                <div class="data-item">
+                    <h3>Universitas</h3>
+                    <p>Universitas Sanata Dharma</p>
+                </div>
+                <div class="data-item">
+                    <h3>Hobi</h3>
+                    <p>Musik, Mancing, Hiking</p>
+                </div>
+                <div class="data-item">
+                    <h3>Agama</h3>
+                    <p>Katholik</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2 class="section-heading">Pengalaman dan Kegiatan</h2>
+
+            <form id="form-pengalaman">
+                <div class="form-group">
+                    <label for="judul-pengalaman">Nama Kegiatan</label>
+                    <input type="text" id="judul-pengalaman"
+                        placeholder="Masukkan nama kegiatan" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="periode">Periode</label>
+                    <input type="text" id="periode"
+                        placeholder="Contoh: 2026" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="deskripsi">Deskripsi</label>
+                    <textarea id="deskripsi"
+                        placeholder="Deskripsikan kegiatan tersebut" required></textarea>
+                </div>
+
+                <button type="submit">Tambah Pengalaman</button>
+                <p id="pesan-pengalaman" aria-live="polite"></p>
+            </form>
+
+            <div id="daftar-pengalaman"></div>
+        </section>
+
+        <section class="card">
+            <h2 class="section-heading">Artikel Terbaru</h2>
+            <p>Artikel berikut diambil langsung dari API JSONPlaceholder.</p>
+
+            <div id="loading" class="loading" hidden>
+                <div class="spinner"></div>
+                <p>Memuat artikel...</p>
+            </div>
+
+            <div id="container-artikel"></div>
+        </section>
+
+        <aside class="card">
+            <h2 class="section-heading">Tentang Penulis</h2>
+            <p id="nama-penulis">Memuat nama penulis...</p>
+            <p id="email-penulis">Memuat email...</p>
+        </aside>
+
+        <section class="card">
+            <h2 class="section-heading">Kontak</h2>
+            <p>Jika ingin menghubungi saya, silakan tekan tombol di bawah ini.</p>
+
+            <button id="btn-kontak" type="button">Tampilkan Kontak</button>
+
+            <div id="info-kontak" hidden>
+                <p>
+                    Email:
+                    <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=vdian.valen@gmail.com"
+                        target="_blank" rel="noopener noreferrer">
+                        vdian.valen@gmail.com
+                    </a>
+                </p>
+                <p>
+                    Instagram:
+                    <a href="https://www.instagram.com/palenn.len/"
+                        target="_blank" rel="noopener noreferrer">
+                        @palenn.len
+                    </a>
+                </p>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2 class="section-heading">Komentar Pengunjung</h2>
+            <p>Anda bisa meninggalkan komentar melalui formulir di bawah ini.</p>
+
+            <form id="form-komentar">
+                <div class="form-group">
+                    <label for="nama-komentar">Nama</label>
+                    <input type="text" id="nama-komentar"
+                        placeholder="Masukkan nama" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="isi-komentar">Komentar</label>
+                    <textarea id="isi-komentar"
+                        placeholder="Tulis komentar" required></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button id="btn-kirim-komentar" type="submit">
+                        Kirim Komentar
+                    </button>
+                    <button id="btn-reset" type="button" hidden>
+                        Batal Edit
+                    </button>
+                </div>
+
+                <p id="pesan-komentar" aria-live="polite"></p>
+            </form>
+
+            <div id="loading-komentar" class="loading" hidden>
+                <div class="spinner"></div>
+                <p>Memuat komentar...</p>
+            </div>
+
+            <div id="daftar-komentar"></div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="tahun"></span> Profil Saya</p>
+        </div>
+    </footer>
+</body>
+</html>
